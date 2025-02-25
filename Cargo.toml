@@ -1,0 +1,17 @@
+[workspace]
+resolver = "2"
+members = ["tsc-rs"]
+
+[profile.dev]
+incremental = true # Compile your binary in smaller steps.
+
+[profile.release]
+codegen-units = 1 # Allows LLVM to perform better optimization.
+lto = true        # Enables link-time-optimizations.
+opt-level = "z"   # Prioritizes small binary size. Use `3` if you prefer speed.
+panic = "abort"   # Higher performance by disabling panic handlers.
+strip = true      # Ensures debug symbols are removed.
+
+[workspace.metadata.bin]
+cargo-make = { version = "0.37.24" }
+cargo-nextest = { version = "0.9.91" }

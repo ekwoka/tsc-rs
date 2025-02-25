@@ -1,0 +1,22 @@
+[config]
+default_to_workspace = false
+load_cargo_aliases = true
+
+[tasks.default]
+alias = "build"
+
+[tasks.nextest]
+command = "cargo"
+args = ["nextest", "run", "--no-tests", "pass"]
+
+[tasks.fmt]
+command = "cargo"
+args = ["fmt", "--all"]
+
+[tasks.precommit]
+dependencies = ["clippy", "fmt", "nextest"]
+
+[tasks.build]
+command = "cargo"
+args = ["build"]
+dependencies = ["precommit"]
