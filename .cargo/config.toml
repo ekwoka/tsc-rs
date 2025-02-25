@@ -1,3 +1,4 @@
 [alias]
 make = ["bin", "cargo-make"]
 nextest = ["bin", "cargo-nextest"]
+watch = ["bin", "cargo-watch"]

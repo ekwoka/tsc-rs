@@ -4,3 +4,8 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+oxc_allocator = "0.52.0"
+oxc_ast = "0.52.0"
+oxc_parser = "0.52.0"
+oxc_span = "0.52.0"
+oxc_syntax = "0.52.0"

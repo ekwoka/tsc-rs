@@ -15,3 +15,4 @@ strip = true      # Ensures debug symbols are removed.
 [workspace.metadata.bin]
 cargo-make = { version = "0.37.24" }
 cargo-nextest = { version = "0.9.91" }
+cargo-watch = { version = "8.5.3" }

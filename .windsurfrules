@@ -1,0 +1,13 @@
+Modules should be kept small and focused. Make additional modules when a modules scope becomes too large.
+
+Limit changes to existing code when adding new functionality.
+
+When unexpected errors happen, start with trying to solve the problem by correcting the recently written code before trying to solve it by adjusting other code.
+
+After making logical changes, run `cargo check` to ensure the code is valid.
+
+When adding new functionality, first write a test for it.
+
+Run `cargo make nextest` to run the tests to ensure the results are as expected. Do this after writing new failing tests, and after satisfying the tests.
+
+If code changes lead to previously passing tests now failing, review the recent code changes for whether they require the tests to be updated, or if there is a simpler approach to get the new code to pass all tests.
