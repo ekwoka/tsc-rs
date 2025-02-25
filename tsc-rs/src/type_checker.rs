@@ -1,6 +1,6 @@
-use std::sync::Arc;
-use oxc_ast::ast::*;
 use crate::types::*;
+use oxc_ast::ast::*;
+use std::sync::Arc;
 
 pub struct TypeChecker {
     errors: Vec<String>,
@@ -8,9 +8,7 @@ pub struct TypeChecker {
 
 impl TypeChecker {
     pub fn new() -> Self {
-        TypeChecker {
-            errors: Vec::new(),
-        }
+        TypeChecker { errors: Vec::new() }
     }
 
     pub fn check_program(&mut self, program: &Program) {
@@ -30,8 +28,7 @@ impl TypeChecker {
                             if !check_type_compatibility(&declared_type, &init_type) {
                                 self.errors.push(format!(
                                     "Type '{}' is not assignable to type '{}'",
-                                    init_type,
-                                    declared_type
+                                    init_type, declared_type
                                 ));
                             }
                         }

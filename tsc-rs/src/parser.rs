@@ -1,6 +1,6 @@
 use oxc_allocator::Allocator;
-use oxc_parser::Parser;
 use oxc_ast::ast::Program;
+use oxc_parser::Parser;
 use oxc_span::SourceType;
 
 pub struct TypeScriptProgram {
@@ -24,7 +24,7 @@ pub fn parse_typescript(source_code: &str) -> Result<TypeScriptProgram, String> 
     };
 
     let ret = Parser::new(&allocator, source_code, source_type).parse();
-    
+
     // ParserReturn is not a Result, but contains diagnostics if there were errors
     if ret.errors.is_empty() {
         Ok(TypeScriptProgram {
@@ -48,7 +48,11 @@ mod tests {
         "#;
 
         let result = parse_typescript(source);
-        assert!(result.is_ok(), "Failed to parse valid TypeScript: {:?}", result);
+        assert!(
+            result.is_ok(),
+            "Failed to parse valid TypeScript: {:?}",
+            result
+        );
     }
 
     #[test]
