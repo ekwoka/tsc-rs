@@ -8,6 +8,6 @@ After making logical changes, run `cargo check` to ensure the code is valid.
 
 When adding new functionality, first write a test for it.
 
-Run `cargo make nextest` to run the tests to ensure the results are as expected. Do this after writing new failing tests, and after satisfying the tests.
+Run `cargo test` to run the tests to ensure the results are as expected. Do this after writing new failing tests, and after satisfying the tests.
 
 If code changes lead to previously passing tests now failing, review the recent code changes for whether they require the tests to be updated, or if there is a simpler approach to get the new code to pass all tests.
